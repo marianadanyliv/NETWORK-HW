@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>HW - Network</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <h1 class="title">HW - Network</h1>
+        	<!-- <nav class="menu"> -->
+        <div><a href="#one" class="menu">1. Read.</a></div>
+        <div><a href="#two" class="menu">2. Play with Chrome Developers Toolkit (DevTools), and "Network" tab.</a></div>
+        <div><a href="#three" class="menu">3. What are differences between HTTP version 1.0 and 1.1?</a></div>
+        <div><a href="#four" class="menu">4. Use the "telnet" program.</a></div>
+        <div><a href="#five" class="menu">5. Use actions on "Network" tab.</a></div>
+        <div><a href="#six" class="menu">6. Using the hurl.it</a></div>
+        <div><a href="#seven" class="menu">7. Using the hurl.it</a></div>
+        <div><a href="#eight" class="menu">8. What is the different with GET request?</a></div>
+        <div><a href="#nine" class="menu">9. Find and show few (at least 5) resources, where POST method is used</a></div>
+        <div><a href="#ten" class="menu">10. Using the Postman extension</a></div>
+        <div><a href="#eleven" class="menu">11. Find any free hosting that provides FTP accessgoogle "ftp free hosting", or "free hosting", etc</a></div><br>
+        <!-- </nav> -->
+    </header>
+    <div class="container">
+        <div id="one" class="task">
+        	<h2 class="task-name">1. Read.</h2><br>
+        	<h2><a target="_blank" href="http://code.tutsplus.com/articles/chrome-dev-tools-networking-and-the-console--net-28167" class="link">Chrome Dev Tools: Networking and the Console</a></h2><br>
+        	<h2><a target="_blank" href="https://developer.chrome.com/devtools/docs/network#network-panel-overview" class="link">Measure Resource Loading Times</a></h2>
+        </div><br>
+        <div id="two" class="task">
+        	<h2 class="task-name">2. Play with Chrome Developers Toolkit (DevTools), and "Network" tab.</h2><br>
+        	<h2 class="url">Facebook</h2>
+        	<img src="images/Facebook.png" alt="" class="screen">
+        	<h2 class="url">Planeta Kino</h2>
+        	<img src="images/PlanetaKino.png" alt="" class="screen">
+        	<h2 class="url">AliExpress</h2>
+        	<img src="images/AliExpress.png" alt="" class="screen">
+        	<h2 class="url">Griffon Socks</h2>
+        	<img src="images/GriffonSocks.png" alt="" class="screen">
+        	<h2 class="url">Instagram</h2>
+        	<img src="images/Insta.png" alt="" class="screen">
+        	<img src="images/response.png" alt="" class="resp">
+        	<img src="images/request.png" alt="" class="requ">
+        	<a class="url" href="https://en.wikipedia.org/wiki/List_of_HTTP_header_fields" target="_blank"> More info about Response/Request Header</a>
+        </div><br>
+        <div id="three" class="task">
+        	<h2>3. What are differences between HTTP version 1.0 and 1.1?</h2><br>
+        	<h2>3.1. List of differences between 1.0 and 1.1</h2>
+			<div  id="task3"><p><b>Підтримка проксі та поле Host:</b><br>
+			HTTP 1.1 має обов'язковий заголовок Host за специфікацією.<br>
+			HTTP 1.0 офіційно не вимагає заголовку Host, але це не зашкодить додати один, багато програм (проксі) очікують побачити заголовок Host незалежно від версії протоколу.<hr>
+			<b>Постійні зв'язки:</b><br>
+			HTTP 1.1 також дозволяє мати постійні підключення, що означає, що у вас може бути більше одного запиту/відповіді на одному HTTP-з'єднанні. <br>
+			У HTTP 1.0 вам довелося б відкрити нове підключення для кожної пари запиту/відповіді. І після кожної відповіді зв'язок буде закритий. Це призводить до деяких проблем із високоюефективністю через TCP Slow Start. <hr>
+			<b>Метод OPTIONS:</b><br>
+			HTTP / 1.1 вводить метод OPTIONS. HTTP-клієнт може використовувати цей метод для визначення можливостей HTTP-сервера. В основному це використовується для спільного використання ресурсів Cross Origin у веб-програмах. <hr>
+			<b>Кешування:</b><br>
+			HTTP 1.0 підтримує кешування за допомогою заголовка: If-Modified-Since. <br>
+			HTTP 1.1 розширює підтримку кешування багато чого, використовуючи те, що називається тегом entity. Якщо 2 ресурси однакові, то вони матимуть ті самі теги об'єктів. HTTP 1.1 також додає умовні заголовки If-Unmodified-Since, If-Match, If-None-Match. Є також додаткові доповнення щодо кешування, як заголовок Cache-Control.
+			</p><hr><br></div>
+        	<h2>3.2. Answer to question - how to pass user-data via GET? Via POST? What is the diff?</h2>
+        	<div id="task3">
+        	<p>Основна відмінність методів GET і POST - в способі передачі даних веб-форми обробленому скрипту, а саме: <br><br> Метод GET відправляє скрипту всю зібрану інформацію форми як частина URL:<br>
+        	<p class="get-post">http://www.komtet.ru/script.php?login=admin&name=komtet</p><br>
+        	Метод POST передає дані таким чином, що користувач сайту вже не бачить передаються скрипту дані:
+			<p class="get-post">http://www.komtet.ru/script.php</p><br>
+			Обидва методи успішно передають необхідну інформацію з веб-форми скрипту, тому при виборі того чи іншого методу, який буде найбільш підходити сайту, потрібно враховувати наступні фактори: 
+			<ol id="task3-2">
+				<li>Принцип роботи методу GET обмежує обсяг переданої скрипту інформації;</li>
+				<li>Оскільки метод GET відправляє скрипту всю зібрану інформацію форми як частина URL (тобто у відкритому вигляді), то це може згубно вплинути на безпеку сайту;</li>
+				<li>Сторінку, що згенерувала методом GET, можна помітити закладкою (адреса сторінки буде завжди унікальний), а сторінку, що згенерувала метод POST не можна (адреса сторінки залишається незмінним, так як дані в URL-адреса не підставляються);</li>
+				<li>Використовуючи метод GET можна передавати дані не через веб-форму, а через URL сторінки, ввівши необхідні значення через знак &:
+				<p class="get-post">http://www.komtet.ru/script.php?login=admin&name=komtet</p></li>
+				<li>Метод POST на відміну від методу GET дозволяє передавати запитом файли;</li>
+				<li>При використанні методу GET існує ризик того, що пошуковий робот може виконати той чи інший відкритий запит. </li>
+			</ol></p><hr><br>
+			</div>
+        	<h2>3.3. Few samples of websites (and cases) where POST method is used</h2>
+        	<div id="task3">
+        		<a href="https://oauth.ukr.net/registration" target="_blank">1. https://oauth.ukr.net/registration</a><br>
+        		<a href="https://www.facebook.com/?stype=lo&jlou=AfcVUV9mMg4UCHk-AzUEWGKE-UkSZvMnzndsdsFXsVrKdWiFXDwcnS4IpGqIjU7TN6M-qYNQmIc9Fy1_iAVBpUohkhHCMRGh4IdNEt-KNTLBOA&smuh=30676&lh=Ac8nLUgYJvc-y9B6" target="_blank">2. https://www.facebook.com/?stype=lo&jlou=AfcVUV9mMg4UCHk-AzUEWGKE-UkSZvMnzndsdsFXsVrKdWiFXDwcnS4IpGqIjU7TN6M-qYNQmIc9Fy1_iAVBpUohkhHCMRGh4IdNEt-KNTLBOA&smuh=30676&lh=Ac8nLUgYJvc-y9B6</a><br>
+        		<img src="images/post1.png" alt="" class="post">
+        		<img src="images/post2.png" alt="" class="post">
+        		<img src="images/post3.png" alt="" class="post">
+        	</div>
+        </div><br>
+        <div id="four" class="task"><h2>4. Use the "telnet" program.</h2>
+        	<div class="url">
+        		<h2>GET</h2>
+        		<img src="images/telnet1.png" alt="">
+        		<img src="images/telnet2.png" alt="" class="screen">
+        		<h2>HEAD</h2>
+        		<img src="images/telnet3.png" alt="">
+        		<img src="images/telnet4.png" alt="" class="telnet">
+        	</div><br>
+        </div>
+        <div id="five" class="task"><h2>5. Use actions on "Network" tab.</h2>
+			<div>
+				<h2>Describe what feature have you used, and how you can use it in future</h2><br>
+				<h3 id="task4">Використовуючи на практиці <b>"search" & "filter"</b> я зрозуміла, що за допомогою цих фічів можу швидше знайти файл, який мені потрібно, а також відсортувати файли за типами. <br> Знайдені файли необхідного розширення (img, js, css) можна аналізувати за розміром, порядком заватаження, швидкістю заважтаження, їх статусом.</h3><br>
+			</div>
+        </div>
+        <div id="six" class="task"><h2>6. Using the hurl.it</h2><br>
+			<div>
+				<img src="images/Hurt-it-GET.png" alt="" class="screen">
+				<img src="images/Hurt-it-GET1.png" alt="" class="screen">
+				<h3 id="task4">Connection - статус з`єднання; <br> 
+				Content-Encoding - алгоритм стиснення; <br>	
+				Content-Security-Policy-Report-Only - дозволяє експериментувати з політиками шляхом моніторингу (але не дотримання) їхніх наслідків; <br>
+				Content-Type - тип носія ресурсу; <br>
+				Date - дата і час створення повідомлення; <br>
+				Server - інформація про програмне забезпечення, яке використовується hurl.it для обробки запиту <br>
+				Strict-transport-security - дозволяє веб-сайту повідомити браузеру, що він повинен бути доступний тільки через HTTPS, замість того, щоб використовувати HTTP. <br>
+				Transfer-Encoding - визначає форму кодування, що використовується для передачі безпечного входу користувача. 
+				</h3><br>
+			</div>	
+        </div>
+        <div id="seven" class="task"><h2>7. Using the hurl.it</h2><br>
+			<div>
+				<img src="images/Hurt-it-HEAD.png" alt="" class="screen">
+				<img src="images/Hurt-it-HEAD1.png" alt="" class="screen">
+				<h3 id="task4">Connection - статус з`єднання; <br> 
+				Content-Encoding - алгоритм стиснення; <br>	
+				Content-Security-Policy-Report-Only - дозволяє експериментувати з політиками шляхом моніторингу (але не дотримання) їхніх наслідків; <br>
+				Content-Type - тип носія ресурсу; <br>
+				Date - дата і час створення повідомлення; <br>
+				Server - інформація про програмне забезпечення, яке використовується hurl.it для обробки запиту <br>
+				Strict-transport-security - дозволяє веб-сайту повідомити браузеру, що він повинен бути доступний тільки через HTTPS, замість того, щоб використовувати HTTP. <br>
+				Transfer-Encoding - визначає форму кодування, що використовується для передачі безпечного входу користувача. 
+				</h3><br>
+			</div>	
+        </div>
+        <div id="eight" class="task"><h2>8. What is the different with GET request?</h2><br>
+			<div>
+				<img src="images/Hurt-it-GET1.png" alt="" class="screen" class="hurl-it">
+				<img src="images/Hurt-it-HEAD1.png" alt="" class="screen" class="hurl-it">
+				<h3 id="task4">При HEAD-request сервер не повертає вміст http-відповіді, лише пусте тіло документу, є код відповіді і HTTP headers. Застосовується для отримання метаданих, перевірки наявності ресурсу (валідації URL) і щоб дізнатися, чи не змінився він з моменту останнього звернення </h3><br>
+			</div>
+        </div>
+        <div id="nine" class="task"><h2>9. Find and show few (at least 5) resources, where POST method is used</h2><br>
+        	<h2 id="task4">LINGUALEO</h2>
+        	<img src="images/Lingualeo.png" alt="" class="screen"><br>
+        	<h2 id="task4">АФІША ЛЬВІВ</h2>
+        	<img src="images/Afisha.png" alt="" class="screen"><br>
+        	<h2 id="task4">TICKETS.UA</h2>
+        	<img src="images/tikets.png" alt="" class="screen"><br>
+        	<h2 id="task4">SOFTSERVE</h2>
+       		<img src="images/SoftServe.png" alt="" class="screen"><br>
+        	<h2 id="task4">GREEN FOREST</h2>
+        	<img src="images/GreenForest.png" alt="" class="screen"><br>
+        	<h3 id="task4"> В основному метод POST використовується для авторизації на сайті, при введені даних про користувача.</h3><br>
+        </div>
+        <div id="ten" class="task"><h2>10. Using the Postman extension</h2><br>
+        	<div>
+        		<img src="images/postman1.png" alt="" class="screen">
+        		<img src="images/postman2.png" alt="" class="screen">
+        		<img src="images/postman3.png" alt="" class="screen">
+        		<img src="images/postman4.png" alt="" class="screen">
+        		<img src="images/postman6.png" alt="" class="screen">
+        	</div><br>
+        </div>
+        <div id="eleven" class="task"><h2>11. Find any free hosting that provides FTP accessgoogle "ftp free hosting", or "free hosting", etc</h2>
+        </div>
+    </div>
+</body>
+</html>
